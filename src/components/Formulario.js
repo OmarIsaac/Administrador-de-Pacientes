@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import uuid from "react-uuid";
 
 export default function Formulario() {
   // Creando el State de citas
@@ -38,8 +39,12 @@ export default function Formulario() {
       actualizarError(true);
       return;
     }
+    // Eloiminar el mensaje previo
+    actualizarError(false);
     // Asignar un ID
-
+    cita.id = uuid();
+    console.log(cita);
+    //cita.id = uuid();
     // Crear la cita
 
     // Reiniciar el form
