@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import uuid from "react-uuid";
 
-export default function Formulario() {
+export default function Formulario({ crearCita }) {
   // Creando el State de citas
   const [cita, actualizarCita] = useState({
     mascota: "",
@@ -43,10 +43,9 @@ export default function Formulario() {
     actualizarError(false);
     // Asignar un ID
     cita.id = uuid();
-    console.log(cita);
-    //cita.id = uuid();
-    // Crear la cita
 
+    // Crear la cita
+    crearCita(cita);
     // Reiniciar el form
   };
 
